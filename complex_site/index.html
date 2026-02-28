@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NZV Studio — Visual Design, Branding & Identity" />
+  <title>NZV Studio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
+
+  <!-- Fonts: Bebas Neue (display) + DM Serif Display (italic accent) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ─── CUSTOM CURSOR ─────────────────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ─── LOADER ────────────────────────────────────────────────── -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__bar"></div>
+    <span class="loader__label">NZV Studio</span>
+  </div>
+
+  <!-- ─── NAVIGATION ────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="NZV Studio">
+      <!-- Swap for your SVG logo. See README for specs. -->
+      <img src="assets/logos/logo-light.svg" alt="NZV Studio" class="nav__logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+      <span class="nav__logo-text" style="display:none">NZV</span>
+    </a>
+
+    <ul class="nav__links" id="navLinks" role="list">
+      <li><a href="#work" class="nav__link">Work</a></li>
+      <li><a href="#personal" class="nav__link">Personal</a></li>
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#shop" class="nav__link">Shop</a></li>
+      <li><a href="#contact" class="nav__link nav__link--hi">Say hi →</a></li>
+    </ul>
+
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <ul class="mobile-nav__links" role="list">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#personal">Personal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav__foot">
+      <a href="https://www.instagram.com/nzv.studio/" target="_blank" rel="noopener noreferrer">IG</a>
+      <a href="https://www.behance.net/nzv" target="_blank" rel="noopener noreferrer">Be</a>
+      <a href="https://dribbble.com/nzvstudio" target="_blank" rel="noopener noreferrer">Dr</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ──────────────────────────────────────────────────── -->
+  <header class="hero" id="top">
+    <!-- Top label strip -->
+    <div class="hero__row hero__row--top">
+      <span class="hero__service">Visual Design</span>
+      <span class="hero__dot">●</span>
+      <span class="hero__service hero__service--italic">Identity &amp; Branding</span>
+    </div>
+
+    <!-- Central image -->
+    <div class="hero__img-frame">
+      <!-- Replace with your own hero image. See README → Hero image -->
+      <img src="assets/images/hero.jpg" alt="Featured NZV Studio brand project"
+        class="hero__img"
+        onerror="this.closest('.hero__img-frame').classList.add('hero__img-frame--empty')" />
+      <span class="hero__img-label">Portfolio 2026</span>
+    </div>
+
+    <!-- Bottom label strip -->
+    <div class="hero__row hero__row--bottom">
+      <span class="hero__service hero__service--italic">Art Direction</span>
+      <span class="hero__dot">●</span>
+      <span class="hero__service">Typography</span>
+    </div>
+
+    <!-- Giant background word -->
+    <span class="hero__bg-word" aria-hidden="true">NZV</span>
+  </header>
+
+  <!-- ─── MARQUEE ────────────────────────────────────────────────── -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+      <span>SELECTED WORK ↓</span>
+    </div>
+  </div>
+
+  <!-- ─── WORK ───────────────────────────────────────────────────── -->
+  <section class="section" id="work">
+    <div class="container">
+      <!-- Section label -->
+      <div class="section__label">
+        <span class="section__num">01</span>
+        <span class="section__name">Work</span>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter" role="tablist" aria-label="Filter work by category">
+        <button class="filter__btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter__btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+        <button class="filter__btn" data-filter="logo" role="tab" aria-selected="false">Logo</button>
+        <button class="filter__btn" data-filter="typography" role="tab" aria-selected="false">Type</button>
+        <button class="filter__btn" data-filter="palette" role="tab" aria-selected="false">Colour</button>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           WORK GRID — see README → Work Items for how to add cards
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="work-grid" id="workGrid">
+
+        <!-- Large card -->
+        <article class="work-card work-card--large reveal" data-category="branding">
+          <a href="#" class="work-card__link" aria-label="Studio Verdure — Branding">
+            <div class="work-card__img-wrap">
+              <img src="assets/images/work/project-01-cover.jpg"
+                alt="Studio Verdure brand identity" class="work-card__img"
+                loading="lazy" width="1200" height="900" />
+              <div class="work-card__chip">
+                <span>BRANDING</span><span>IDENTITY</span>
+              </div>
+            </div>
+            <div class="work-card__meta">
+              <h3 class="work-card__title">Studio Verdure</h3>
+              <span class="work-card__year">2025</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Normal card -->
+        <article class="work-card reveal" data-category="logo">
+          <a href="#" class="work-card__link" aria-label="Arca Coffee — Logo">
+            <div class="work-card__img-wrap">
+              <img src="assets/images/work/project-02-cover.jpg"
+                alt="Arca Coffee logomark" class="work-card__img"
+                loading="lazy" width="800" height="800" />
+              <div class="work-card__chip">
+                <span>LOGO</span><span>PACKAGING</span>
+              </div>
+            </div>
+            <div class="work-card__meta">
+              <h3 class="work-card__title">Arca Coffee</h3>
+              <span class="work-card__year">2025</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card reveal" data-category="typography">
+          <a href="#" class="work-card__link" aria-label="Mast — Typography">
+            <div class="work-card__img-wrap">
+              <img src="assets/images/work/project-03-cover.jpg"
+                alt="Mast type specimen" class="work-card__img"
+                loading="lazy" width="800" height="800" />
+              <div class="work-card__chip">
+                <span>TYPE</span><span>PRINT</span>
+              </div>
+            </div>
+            <div class="work-card__meta">
+              <h3 class="work-card__title">Mast Type Specimen</h3>
+              <span class="work-card__year">2024</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Wide card -->
+        <article class="work-card work-card--wide reveal" data-category="palette">
+          <a href="#" class="work-card__link" aria-label="Solstice — Colour System">
+            <div class="work-card__img-wrap">
+              <img src="assets/images/work/project-04-cover.jpg"
+                alt="Solstice colour system" class="work-card__img"
+                loading="lazy" width="1600" height="900" />
+              <div class="work-card__chip">
+                <span>COLOUR</span><span>BRANDING</span>
+              </div>
+            </div>
+            <div class="work-card__meta">
+              <h3 class="work-card__title">Solstice Colour System</h3>
+              <span class="work-card__year">2024</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card reveal" data-category="branding">
+          <a href="#" class="work-card__link" aria-label="Mira Interiors — Branding">
+            <div class="work-card__img-wrap">
+              <img src="assets/images/work/project-05-cover.jpg"
+                alt="Mira Interiors branding" class="work-card__img"
+                loading="lazy" width="800" height="800" />
+              <div class="work-card__chip">
+                <span>BRANDING</span>
+              </div>
+            </div>
+            <div class="work-card__meta">
+              <h3 class="work-card__title">Mira Interiors</h3>
+              <span class="work-card__year">2024</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card reveal" data-category="logo">
+          <a href="#" class="work-card__link" aria-label="Fenix Records — Logo">
+            <div class="work-card__img-wrap">
+              <img src="assets/images/work/project-06-cover.jpg"
+                alt="Fenix Records logomark" class="work-card__img"
+                loading="lazy" width="800" height="800" />
+              <div class="work-card__chip">
+                <span>LOGO</span><span>MUSIC</span>
+              </div>
+            </div>
+            <div class="work-card__meta">
+              <h3 class="work-card__title">Fenix Records</h3>
+              <span class="work-card__year">2023</span>
+            </div>
+          </a>
+        </article>
+
+      </div><!-- /workGrid -->
+    </div>
+  </section>
+
+  <!-- ─── MARQUEE 2 (divider) ────────────────────────────────────── -->
+  <div class="marquee marquee--accent" aria-hidden="true">
+    <div class="marquee__track marquee__track--reverse">
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+      <span>PERSONAL PROJECTS ✦</span>
+    </div>
+  </div>
+
+  <!-- ─── PERSONAL PROJECTS ──────────────────────────────────────── -->
+  <section class="section section--dark" id="personal">
+    <div class="container">
+      <div class="section__label section__label--light">
+        <span class="section__num">02</span>
+        <span class="section__name">Personal</span>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           PERSONAL ITEMS — see README → Personal Projects
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="personal-list">
+
+        <article class="personal-item reveal reveal--dark">
+          <a href="#" class="personal-item__link">
+            <span class="personal-item__num">01</span>
+            <div class="personal-item__img-wrap">
+              <img src="assets/images/personal/personal-01-cover.jpg"
+                alt="36 Days of Type lettering project"
+                class="personal-item__img" loading="lazy" width="1200" height="800" />
+            </div>
+            <div class="personal-item__body">
+              <h3 class="personal-item__title">36 Days<br /><em>of Type</em></h3>
+              <p class="personal-item__desc">
+                A daily lettering challenge exploring each letter of the alphabet through
+                different type styles, textures and colour stories.
+              </p>
+              <span class="personal-item__cta">Explore the project →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="personal-item reveal reveal--dark">
+          <a href="#" class="personal-item__link">
+            <span class="personal-item__num">02</span>
+            <div class="personal-item__img-wrap">
+              <img src="assets/images/personal/personal-02-cover.jpg"
+                alt="Imaginary Brands zine"
+                class="personal-item__img" loading="lazy" width="1200" height="800" />
+            </div>
+            <div class="personal-item__body">
+              <h3 class="personal-item__title">Imaginary<br /><em>Brands</em></h3>
+              <p class="personal-item__desc">
+                A printed zine series featuring full brand identities for fictitious
+                companies — each one a complete, fully realised world.
+              </p>
+              <span class="personal-item__cta">Explore the project →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="personal-item reveal reveal--dark">
+          <a href="#" class="personal-item__link">
+            <span class="personal-item__num">03</span>
+            <div class="personal-item__img-wrap">
+              <img src="assets/images/personal/personal-03-cover.jpg"
+                alt="Colour Archive project"
+                class="personal-item__img" loading="lazy" width="1200" height="800" />
+            </div>
+            <div class="personal-item__body">
+              <h3 class="personal-item__title">Colour<br /><em>Archive</em></h3>
+              <p class="personal-item__desc">
+                An ongoing archive of curated colour palettes drawn from architecture,
+                nature, film stills and found objects.
+              </p>
+              <span class="personal-item__cta">Explore the project →</span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ──────────────────────────────────────────────────── -->
+  <section class="section section--about" id="about">
+    <!-- Giant background heading -->
+    <div class="about-bg-text" aria-hidden="true">ABOUT</div>
+
+    <div class="container">
+      <div class="about">
+
+        <div class="about__col-img reveal">
+          <!-- Replace with your portrait. See README → About Photo -->
+          <div class="about__img-wrap">
+            <img src="assets/images/about/portrait.jpg"
+              alt="Portrait of NZV Studio designer"
+              class="about__img" loading="lazy" width="600" height="750"
+              onerror="this.closest('.about__img-wrap').classList.add('about__img--missing')" />
+          </div>
+          <div class="about__caption">
+            <span>Visual Designer</span>
+            <span class="about__location">Based in [City] ✦</span>
+          </div>
+        </div>
+
+        <div class="about__col-text">
+          <div class="section__label reveal">
+            <span class="section__num">03</span>
+            <span class="section__name">About</span>
+          </div>
+
+          <h2 class="about__title reveal">
+            Design<br />is how you<br />make people<br /><em>feel.</em>
+          </h2>
+
+          <div class="about__body reveal">
+            <p>
+              I'm a visual designer based in [City], specialising in brand identity,
+              typography and visual systems. I help founders, studios and creative
+              businesses build brands that feel considered, coherent and alive.
+            </p>
+            <p>
+              Every project starts with listening — understanding not just what a brand
+              looks like, but what it stands for and who it speaks to.
+            </p>
+          </div>
+
+          <!-- Skill pills -->
+          <ul class="about__pills reveal" aria-label="Specialisms">
+            <li>Brand Identity</li>
+            <li>Logo Design</li>
+            <li>Typography</li>
+            <li>Colour Systems</li>
+            <li>Packaging</li>
+            <li>Art Direction</li>
+            <li>Brand Strategy</li>
+            <li>Print Design</li>
+          </ul>
+
+          <!-- Socials -->
+          <div class="about__socials reveal">
+            <a href="https://www.behance.net/nzv" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+            <a href="https://www.instagram.com/nzv.studio/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a href="https://dribbble.com/nzvstudio" target="_blank" rel="noopener noreferrer">Dribbble ↗</a>
+            <a href="https://www.linkedin.com/in/nzvdesigns/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+      </div><!-- /about -->
+
+      <!-- Client testimonials -->
+      <div class="testimonials">
+        <div class="testimonials__track" id="testimonialTrack">
+
+          <blockquote class="testimonial">
+            <p class="testimonial__quote">
+              "Working with NZV Studio transformed how we present ourselves to the world.
+              The identity is bold, considered and completely us."
+            </p>
+            <footer class="testimonial__author">
+              <strong>— Client Name</strong>
+              <span>Studio / Company</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__quote">
+              "The level of craft is extraordinary. Every touchpoint feels intentional.
+              We've had more compliments on our brand than ever before."
+            </p>
+            <footer class="testimonial__author">
+              <strong>— Client Name</strong>
+              <span>Studio / Company</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__quote">
+              "Not just a designer — a creative partner. NZV brought ideas we hadn't
+              even imagined, then executed them flawlessly."
+            </p>
+            <footer class="testimonial__author">
+              <strong>— Client Name</strong>
+              <span>Studio / Company</span>
+            </footer>
+          </blockquote>
+
+        </div>
+
+        <div class="testimonials__controls" aria-label="Testimonial navigation">
+          <button class="testimonials__btn" id="tPrev" aria-label="Previous testimonial">←</button>
+          <span class="testimonials__counter" id="tCounter">1 / 3</span>
+          <button class="testimonials__btn" id="tNext" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SHOP ───────────────────────────────────────────────────── -->
+  <section class="section section--dark" id="shop">
+    <div class="container">
+      <div class="section__label section__label--light">
+        <span class="section__num">04</span>
+        <span class="section__name">Shop</span>
+      </div>
+
+      <p class="shop__sub reveal reveal--dark">Digital assets, templates &amp; prints — ready to use.</p>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SHOP GRID — see README → Shop Items
+           Replace href="#" with your Gumroad / Etsy / Shopify link.
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="shop-grid">
+
+        <article class="shop-card reveal reveal--dark">
+          <a href="#" class="shop-card__link" target="_blank" rel="noopener noreferrer">
+            <div class="shop-card__img-wrap">
+              <img src="assets/images/shop/product-01.jpg"
+                alt="Brand Identity Starter Kit — Figma template"
+                class="shop-card__img" loading="lazy" width="600" height="600" />
+              <span class="shop-card__tag">Digital</span>
+            </div>
+            <div class="shop-card__body">
+              <h3 class="shop-card__title">Brand Identity Starter Kit</h3>
+              <p class="shop-card__desc">Figma template with logo frames, colour tokens &amp; guidelines.</p>
+              <span class="shop-card__price">$24</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="shop-card reveal reveal--dark">
+          <a href="#" class="shop-card__link" target="_blank" rel="noopener noreferrer">
+            <div class="shop-card__img-wrap">
+              <img src="assets/images/shop/product-02.jpg"
+                alt="Moodboard Kit — Procreate brushes"
+                class="shop-card__img" loading="lazy" width="600" height="600" />
+              <span class="shop-card__tag">Digital</span>
+            </div>
+            <div class="shop-card__body">
+              <h3 class="shop-card__title">Moodboard Kit</h3>
+              <p class="shop-card__desc">50 Procreate textures and brushes for mood boards.</p>
+              <span class="shop-card__price">$16</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="shop-card reveal reveal--dark">
+          <a href="#" class="shop-card__link" target="_blank" rel="noopener noreferrer">
+            <div class="shop-card__img-wrap">
+              <img src="assets/images/shop/product-03.jpg"
+                alt="Colour Harmony risograph print"
+                class="shop-card__img" loading="lazy" width="600" height="600" />
+              <span class="shop-card__tag">Print</span>
+            </div>
+            <div class="shop-card__body">
+              <h3 class="shop-card__title">Colour Harmony Print</h3>
+              <p class="shop-card__desc">A3 risograph. Limited edition of 50, signed &amp; numbered.</p>
+              <span class="shop-card__price">$38</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="shop-card reveal reveal--dark">
+          <a href="#" class="shop-card__link" target="_blank" rel="noopener noreferrer">
+            <div class="shop-card__img-wrap">
+              <img src="assets/images/shop/product-04.jpg"
+                alt="Type Hierarchy cheat sheet PDF"
+                class="shop-card__img" loading="lazy" width="600" height="600" />
+              <span class="shop-card__tag">Digital</span>
+            </div>
+            <div class="shop-card__body">
+              <h3 class="shop-card__title">Type Hierarchy Sheet</h3>
+              <p class="shop-card__desc">PDF reference covering scale, weight and spacing rules.</p>
+              <span class="shop-card__price">$8</span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ────────────────────────────────────────────────── -->
+  <section class="section section--contact" id="contact">
+    <div class="container">
+      <div class="section__label reveal">
+        <span class="section__num">05</span>
+        <span class="section__name">Contact</span>
+      </div>
+
+      <!-- Giant CTA heading -->
+      <h2 class="contact__heading reveal">
+        Let's build<br /><em>something</em><br />great.
+      </h2>
+
+      <!-- Inline email -->
+      <a href="mailto:hi@nzvstudio.com" class="contact__email reveal">hi@nzvstudio.com</a>
+
+      <div class="contact__split">
+        <!-- Availability note -->
+        <div class="contact__availability reveal">
+          <span class="contact__avail-dot"></span>
+          <span>Open for projects — branding, identity &amp; collaborations.</span>
+        </div>
+
+        <!-- Form -->
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input"
+                placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input"
+                placeholder="your@email.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="project" class="form-label">Project type</label>
+            <select id="project" name="project" class="form-input form-select">
+              <option value="" disabled selected>Select a service</option>
+              <option value="branding">Brand Identity</option>
+              <option value="logo">Logo Design</option>
+              <option value="typography">Typography</option>
+              <option value="packaging">Packaging</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-input form-textarea"
+              placeholder="Tell me about your project…" required rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn-send">
+            <span class="btn-send__inner">
+              <span class="btn-send__text">Send message</span>
+              <span class="btn-send__arrow">→</span>
+            </span>
+          </button>
+          <p class="form-success" id="formSuccess" aria-live="polite" hidden>
+            ✓ Sent — I'll be in touch soon.
+          </p>
+        </form>
+      </div><!-- /contact__split -->
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <a href="#top" class="footer__logo-text">NZV Studio</a>
+        <span class="footer__copy">© 2026 — All rights reserved</span>
+      </div>
+      <nav class="footer__socials" aria-label="Social links">
+        <a href="https://www.behance.net/nzv" target="_blank" rel="noopener noreferrer">Behance</a>
+        <a href="https://www.instagram.com/nzv.studio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://dribbble.com/nzvstudio" target="_blank" rel="noopener noreferrer">Dribbble</a>
+        <a href="https://www.linkedin.com/in/nzvdesigns/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.tiktok.com/@nzv.studio" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </nav>
+      <a href="#top" class="footer__back" aria-label="Back to top">↑ Top</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
